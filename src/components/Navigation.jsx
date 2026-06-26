@@ -1,4 +1,7 @@
-import { NavLink } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const PAGES = [
   { path: "/",        label: "Home" },
@@ -9,27 +12,32 @@ const PAGES = [
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
+
+  function isActive(path) {
+    if (path === "/") return pathname === "/";
+    return pathname === path || pathname.startsWith(path + "/");
+  }
+
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <NavLink to="/" className="logo">
+        <Link href="/" className="logo">
           <i className="bi bi-award-fill logo-icon"></i>
           <div className="logo-text">
             <span className="logo-title">OfficeEssentials</span>
             <span className="logo-tagline">Affiliate Reviews &amp; Recommendations</span>
           </div>
-        </NavLink>
+        </Link>
         <nav className="site-nav">
           {PAGES.map(({ path, label }) => (
-            <NavLink
+            <Link
               key={path}
-              to={path}
-              end={path === "/"}
-              className={({ isActive }) => isActive ? "active" : ""}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              href={path}
+              className={isActive(path) ? "active" : ""}
             >
               {label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
         <div className="header-actions">

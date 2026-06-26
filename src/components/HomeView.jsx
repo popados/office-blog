@@ -1,4 +1,6 @@
-import { useNavigate } from "react-router-dom";
+"use client";
+
+import { useRouter } from "next/navigation";
 
 const TOP_PICKS = [
   { rank: "#1", icon: "✒️", bg: "#E0F2F0", name: "Pilot G2 Fine pens",   brand: "Pilot · 12-pack",       price: "$14.49", orig: "$18.00",  badge: "b-sale", label: "19% off" },
@@ -18,23 +20,22 @@ const CATEGORIES = [
 ];
 
 const TRUST_BADGES = [
-  { icon: "bi bi-star-fill",     title: "Expert Reviews",          desc: "Our experts have tried thousands of products to help find the very best." },
-  { icon: "bi bi-tags-fill",     title: "Best Value",              desc: "We only recommend supplies that fit your budget without sacrificing quality." },
-  { icon: "bi bi-shield-check",  title: "Trusted Recommendations", desc: "All our picks are items you can genuinely rely on, every single day." },
-  { icon: "bi bi-lightning-fill",title: "Work Smarter",            desc: "The right supplies help you stay focused and get more done." },
+  { icon: "bi bi-star-fill",      title: "Expert Reviews",          desc: "Our experts have tried thousands of products to help find the very best." },
+  { icon: "bi bi-tags-fill",      title: "Best Value",              desc: "We only recommend supplies that fit your budget without sacrificing quality." },
+  { icon: "bi bi-shield-check",   title: "Trusted Recommendations", desc: "All our picks are items you can genuinely rely on, every single day." },
+  { icon: "bi bi-lightning-fill", title: "Work Smarter",            desc: "The right supplies help you stay focused and get more done." },
 ];
 
 export default function HomeView() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   function go(path) {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(path);
+    router.push(path);
   }
 
   return (
     <div className="home-view">
-      {/* ── Hero ── */}
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-content">
@@ -71,7 +72,6 @@ export default function HomeView() {
         </div>
       </section>
 
-      {/* ── Trust Badges ── */}
       <section className="trust-section">
         <div className="trust-grid">
           {TRUST_BADGES.map(b => (
@@ -84,7 +84,6 @@ export default function HomeView() {
         </div>
       </section>
 
-      {/* ── Categories ── */}
       <section className="categories-section">
         <h2>Shop by Category</h2>
         <div className="categories-grid">
@@ -100,7 +99,6 @@ export default function HomeView() {
         </div>
       </section>
 
-      {/* ── Reviews Banner ── */}
       <section className="reviews-banner">
         <div className="reviews-banner-inner">
           <div>

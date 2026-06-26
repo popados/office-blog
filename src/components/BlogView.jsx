@@ -1,51 +1,28 @@
-import { useState } from "react";
-import { parseFrontmatter } from "../utils/parseFrontmatter.js";
-import BlogPost from "./BlogPost.jsx";
+import Link from "next/link";
+import { getAllPosts } from "../utils/posts.js";
 
-// Auto-import all markdown files in src/posts/ as raw strings
-const rawFiles = import.meta.glob("../posts/*.md", { query: "?raw", import: "default", eager: true });
-
-// Parse each file into { slug, data, content }
-const POSTS = Object.entries(rawFiles)
-  .map(([path, raw]) => {
-    const slug = path.replace("../posts/", "").replace(".md", "");
-    const { data, content } = parseFrontmatter(raw);
-    return { slug, data, content };
-  })
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
-
-function BlogCard({ post, onClick }) {
-  const { data } = post;
+function BlogCard({ post }) {
+  const { data, slug } = post;
   return (
-    <article className="blog-card" onClick={onClick} style={{ cursor: "pointer" }}>
-      <div className="blog-img" style={{ background: data.bg || "#f3f4f6" }}>{data.icon}</div>
-      <div className="blog-body">
-        <p className="blog-tag">{data.tag}</p>
-        <h3 className="blog-title">{data.title}</h3>
-        <p className="blog-excerpt">{data.excerpt}</p>
-        <div className="blog-footer">
-          <span className="blog-meta">{data.date} · {data.readTime}</span>
-          <span className="read-link">Read →</span>
+    <Link href={`/blog/${slug}`} className="blog-card-link">
+      <article className="blog-card">
+        <div className="blog-img" style={{ background: data.bg || "#f3f4f6" }}>{data.icon}</div>
+        <div className="blog-body">
+          <p className="blog-tag">{data.tag}</p>
+          <h3 className="blog-title">{data.title}</h3>
+          <p className="blog-excerpt">{data.excerpt}</p>
+          <div className="blog-footer">
+            <span className="blog-meta">{data.date} · {data.readTime}</span>
+            <span className="read-link">Read →</span>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }
 
 export default function BlogView() {
-  const [activePost, setActivePost] = useState(null);
-
-  if (activePost) {
-    return (
-      <BlogPost
-        post={activePost}
-        onBack={() => {
-          setActivePost(null);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      />
-    );
-  }
+  const posts = getAllPosts();
 
   return (
     <div className="blog-view">
@@ -55,15 +32,8 @@ export default function BlogView() {
       </div>
       <div className="page-content">
         <div className="blog-grid">
-          {POSTS.map(post => (
-            <BlogCard
-              key={post.slug}
-              post={post}
-              onClick={() => {
-                setActivePost(post);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            />
+          {posts.map(post => (
+            <BlogCard key={post.slug} post={post} />
           ))}
         </div>
       </div>

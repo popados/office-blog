@@ -1,0 +1,465 @@
+
+<h2 class="sr-only">30-day affiliate posting schedule for a startup office supply blog, organized into four weekly phases</h2>
+<style>
+.wrap { padding: 1rem 0; font-family: var(--font-sans); }
+.phase-tabs { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.phase-tab { padding: 6px 16px; border-radius: var(--radius); border: 0.5px solid var(--border-strong); background: transparent; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; }
+.phase-tab.active { background: var(--bg-accent); color: var(--text-accent); border-color: var(--border-accent); }
+.phase-tab:hover:not(.active) { background: var(--surface-1); color: var(--text-primary); }
+.phase-panel { display: none; }
+.phase-panel.active { display: block; }
+.phase-intro { background: var(--surface-1); border-radius: 12px; border: 0.5px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+.phase-intro h3 { font-size: 15px; font-weight: 500; color: var(--text-primary); margin: 0 0 4px; }
+.phase-intro p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+.goal-tag { display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 500; background: var(--bg-success); color: var(--text-success); padding: 3px 10px; border-radius: var(--radius); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+.card-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.day-num { min-width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; }
+.card-title { font-size: 14px; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin: 0 0 2px; }
+.card-type { font-size: 11px; color: var(--text-muted); }
+.tasks { list-style: none; padding: 0; margin: 0; }
+.tasks li { font-size: 13px; color: var(--text-secondary); padding: 5px 0; border-top: 0.5px solid var(--border); display: flex; gap: 8px; line-height: 1.5; align-items: flex-start; }
+.tasks li i { font-size: 14px; margin-top: 2px; flex-shrink: 0; color: var(--text-muted); }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-top: 8px; }
+.tag-tip { background: var(--bg-warning); color: var(--text-warning); }
+.tag-hot { background: var(--bg-accent); color: var(--text-accent); }
+.tag-win { background: var(--bg-success); color: var(--text-success); }
+</style>
+
+<div class="wrap">
+  <div class="phase-tabs">
+    <button class="phase-tab active" onclick="show('w1')">Week 1 — Foundation</button>
+    <button class="phase-tab" onclick="show('w2')">Week 2 — Content build</button>
+    <button class="phase-tab" onclick="show('w3')">Week 3 — Promotion</button>
+    <button class="phase-tab" onclick="show('w4')">Week 4 — Optimize</button>
+  </div>
+
+  <div class="phase-panel active" id="w1">
+    <div class="phase-intro">
+      <h3>Week 1 — Foundation (days 1–7)</h3>
+      <p>Niche down to the startup office buyer, join affiliate programs, and publish two anchor posts before any promotion.</p>
+      <span class="goal-tag">Goal: 2 posts live + affiliate programs approved</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">1</div>
+          <div><p class="card-title">Affiliate program signup</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Sign up: Amazon Associates, Staples, Office Depot, Autonomous, FlexiSpot</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Note cookie duration and commission rate for each</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Bookmark affiliate dashboards and set up link tracking</li>
+        </ul>
+        <span class="tag tag-tip">Autonomous & FlexiSpot pay 5–8% on standing desks</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">2</div>
+          <div><p class="card-title">Buyer persona + keyword research</p><p class="card-type">SEO / strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Define persona: seed-stage founder, 5–20 person team, budget-conscious</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find 15 buyer-intent keywords: "best standing desk for startup", "home office chair under $400"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Build a 30-slot content calendar spreadsheet</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">3</div>
+          <div><p class="card-title">Write cornerstone review</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "Best standing desks for startups 2024" — 2,000 words, 5–7 picks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include a comparison table near the top</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add affiliate disclosure above the fold</li>
+        </ul>
+        <span class="tag tag-hot">High AOV = high commissions</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">4</div>
+          <div><p class="card-title">Publish + on-page SEO</p><p class="card-type">Publishing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish with optimized title tag, meta description, H2 structure</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add alt text to all product images</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Submit URL to Google Search Console</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">5</div>
+          <div><p class="card-title">Write "office setup on a budget" guide</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "How to furnish a 10-person startup office for under $5k"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link to your standing desk roundup within the piece</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include a total cost breakdown table</li>
+        </ul>
+        <span class="tag tag-hot">Shareable in startup Slack groups</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">6</div>
+          <div><p class="card-title">Publish budget guide + interlink</p><p class="card-type">Publishing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish and cross-link both posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set up Google Analytics 4 and verify tracking</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create a "Resources" page placeholder with your top picks</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:var(--bg-accent);color:var(--text-accent);">7</div>
+          <div><p class="card-title">Week 1 audit</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Confirm all affiliate links are firing correctly</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check program approval statuses</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Draft 4 content titles for week 2</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="phase-panel" id="w2">
+    <div class="phase-intro">
+      <h3>Week 2 — Content build (days 8–14)</h3>
+      <p>Stack comparison posts, how-tos, and trust-building content. Start your email list. Hit 6 posts total by end of week.</p>
+      <span class="goal-tag">Goal: 4 more posts + email opt-in live</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">8</div>
+          <div><p class="card-title">Chair comparison post</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "Herman Miller Aeron vs Steelcase Leap — startup office review"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Head-to-head table: price, warranty, lumbar, aesthetics</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>End with a clear pick based on team size and budget</li>
+        </ul>
+        <span class="tag tag-hot">Chairs = high AOV, high commission</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">9</div>
+          <div><p class="card-title">Publish chair post + email setup</p><p class="card-type">Publishing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish with all affiliate links and disclosure</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set up Kit or Mailchimp — free tier is fine</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create lead magnet: "Startup office checklist" PDF (1 page)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">10</div>
+          <div><p class="card-title">How-to: remote team home office stipend guide</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "How to set up a $1,000 home office stipend policy for your team"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Embed recommended products per budget tier with affiliate links</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include a downloadable policy template CTA</li>
+        </ul>
+        <span class="tag tag-hot">HR angle = highly shareable</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">11</div>
+          <div><p class="card-title">Publish stipend guide + social snippets</p><p class="card-type">Publishing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish post and add email opt-in form mid-content</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write 3 LinkedIn snippets extracted from the post</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Share to r/startups and r/remotework (value-first, no spam)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">12</div>
+          <div><p class="card-title">Trust post: "What we actually use"</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a personal "here's our actual setup and why" post — no fluff</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include real photos if possible — authenticity drives E-E-A-T</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Non-promotional tone; links are incidental</li>
+        </ul>
+        <span class="tag tag-tip">Builds the author credibility Google wants</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">13</div>
+          <div><p class="card-title">Publish trust post + opt-in forms</p><p class="card-type">Publishing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish and add email opt-in to top 3 posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write 2-email welcome sequence: intro + top picks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add author bio with credentials to all posts</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#C0DD97;color:#27500A;">14</div>
+          <div><p class="card-title">Week 2 data check</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check GSC for early impressions and click data</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Note which affiliate links are getting clicks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Plan week 3 outreach targets</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="phase-panel" id="w3">
+    <div class="phase-intro">
+      <h3>Week 3 — Promotion (days 15–21)</h3>
+      <p>Shift from publishing to distributing. Startup founders hang out on LinkedIn, Reddit, and Hacker News — go there.</p>
+      <span class="goal-tag">Goal: 3 backlinks + 300+ pageviews this week</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">15</div>
+          <div><p class="card-title">LinkedIn content strategy</p><p class="card-type">Promotion</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Post a "5 things we learned furnishing our startup office" thread</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Tag 2–3 relevant founders or office managers</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link to your budget guide in the first comment (not the post body)</li>
+        </ul>
+        <span class="tag tag-hot">LinkedIn first comment = better organic reach</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">16</div>
+          <div><p class="card-title">Write new SEO post: monitor roundup</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "Best monitors for developers at a startup" — 5 picks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include ultrawide and dual-monitor setups</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish and interlink with existing posts</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">17</div>
+          <div><p class="card-title">Hacker News + community outreach</p><p class="card-type">Promotion</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Post "Ask HN: what's your startup's WFH stipend policy?" — no link</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Engage genuinely in comments for 48 hours</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Share your guide only if someone directly asks for a resource</li>
+        </ul>
+        <span class="tag tag-tip">HN rewards participation over promotion</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">18</div>
+          <div><p class="card-title">Guest post outreach</p><p class="card-type">Outreach</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify 5 startup ops or productivity blogs accepting guest posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Pitch: "How to build an ergonomic office policy for a remote-first team"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Send personalized pitches — one topic per blog</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">19</div>
+          <div><p class="card-title">Product roundup: keyboards & peripherals</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "Best mechanical keyboards for engineers at startups" — 6 picks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Segment by budget: under $100, $100–200, $200+</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish and share to r/MechanicalKeyboards with honest context</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">20</div>
+          <div><p class="card-title">Pinterest + social scheduling</p><p class="card-type">Promotion</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create 3 Pinterest pins for your office setup guides</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Schedule 1 week of LinkedIn posts in Buffer or Hypefury</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Mix: tips, questions, behind-the-scenes, link posts (1 in 4)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#FAC775;color:#633806;">21</div>
+          <div><p class="card-title">Week 3 traffic review</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check GA4 for top traffic sources this week</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify highest-engaged posts by time on page</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Plan week 4 optimization targets from the data</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="phase-panel" id="w4">
+    <div class="phase-intro">
+      <h3>Week 4 — Optimize (days 22–30)</h3>
+      <p>Use real data to improve what's working. Upgrade CTAs, add schema, build your resources page, and set up month 2.</p>
+      <span class="goal-tag">Goal: 1st commission + repeatable monthly workflow</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">22</div>
+          <div><p class="card-title">Improve your top post</p><p class="card-type">Optimization</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find your most-visited post in GA4</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add 400 words addressing questions from Reddit or comments</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>A/B test a new headline and update the publish date</li>
+        </ul>
+        <span class="tag tag-tip">Updating beats publishing new for quick wins</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">23</div>
+          <div><p class="card-title">CTA + conversion audit</p><p class="card-type">Optimization</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check affiliate click-through rates across all posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Rewrite weak CTAs: "check price" → "see today's deal at Autonomous"</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add a sticky sidebar or in-content CTA button to top posts</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">24</div>
+          <div><p class="card-title">Trending post: AI tools for startup ops</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "The AI-powered startup office setup in 2024" — timely angle</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Tie in office hardware (monitors, webcams) with AI workflow</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Promote immediately across all channels</li>
+        </ul>
+        <span class="tag tag-hot">AI angle = high shareability in startup circles</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">25</div>
+          <div><p class="card-title">Email broadcast</p><p class="card-type">Email</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Send first broadcast to your list with your 3 best posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Feature one product recommendation with affiliate link</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Ask: "What's the biggest pain in your office setup?" — boosts replies</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">26</div>
+          <div><p class="card-title">Add schema markup</p><p class="card-type">Technical SEO</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add Review + Product schema to all product review posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add FAQ schema to comparison and how-to posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Validate all with Google's Rich Results Test</li>
+        </ul>
+        <span class="tag tag-win">Unlocks star ratings in search results</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">27</div>
+          <div><p class="card-title">Build your "startup toolkit" resources page</p><p class="card-type">Writing</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create a "Our recommended startup office gear" page</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Segment by category: desks, chairs, monitors, peripherals, storage</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link from nav and within all existing posts</li>
+        </ul>
+        <span class="tag tag-win">Passive earner — ranks for "startup office gear"</span>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">28</div>
+          <div><p class="card-title">Core Web Vitals + speed audit</p><p class="card-type">Technical SEO</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Run all posts through PageSpeed Insights</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Compress any image over 150KB to WebP</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check mobile rendering on a real phone</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">29</div>
+          <div><p class="card-title">Competitor gap analysis</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Review top 3 competing blogs for uncovered angles</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Look for missing: niche startup roles (devs, designers, remote ops)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add 8 new topic ideas to your content calendar</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="day-num" style="background:#CECBF6;color:#3C3489;">30</div>
+          <div><p class="card-title">30-day review + month 2 plan</p><p class="card-type">Strategy</p></div>
+        </div>
+        <ul class="tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Tally: posts live, total clicks, commissions earned, email subscribers</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify your 2 best-performing posts to build clusters around</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set month 2 targets: 12 posts, 1,000 pageviews, first $50 commission</li>
+        </ul>
+        <span class="tag tag-win">Month 1 complete</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  ['w1','w2','w3','w4'].forEach((w, i) => {
+    if (w === id) document.querySelectorAll('.phase-tab')[i].classList.add('active');
+  });
+}
+</script>

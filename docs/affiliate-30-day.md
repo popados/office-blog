@@ -364,8 +364,8 @@ For every article:
 
 Example URL:
 
-```
-yourwebsite.com/best-office-chair-under-300
+```cURL
+officeloadouts.com
 ```
 
 ---
@@ -493,7 +493,24 @@ Ideas include:
 
 The key is consistency. A site with 75–100 well-organized, genuinely helpful articles focused on office supplies is much more likely to rank than a site with a handful of broad, generic posts.
 
-## End of Document
+### Topics
+
+Blog Ideas
+* Tech/Accessories
+  * G502 Hero Mouse Review
+  * Huntsman Elite Review
+* Organization
+  * Desk organizers
+* Pens & Writing
+  * G2 Pen Review
+* Notebooks
+  * Why Spiral Notebooks Work?
+* Pens & Writing
+  * Rating Gel Pens
+* Office Furniture
+  * Chairs
+
+# End of Document
 
 ***
 
@@ -506,4 +523,3 @@ The key is consistency. A site with 75–100 well-organized, genuinely helpful a
 Notes :
 </summary>
 </details>
-

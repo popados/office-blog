@@ -12,6 +12,7 @@ import HomeView    from "./components/HomeView.jsx";
 import AboutView   from "./components/AboutView.jsx";
 import ShopView    from "./components/ShopView.jsx";
 import BlogView    from "./components/BlogView.jsx";
+import BlogPost    from "./components/BlogPost.jsx";
 import ContactView from "./components/ContactView.jsx";
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Route path="/"        element={<HomeView />} />
         <Route path="/about"   element={<AboutView />} />
         <Route path="/shop"    element={<ShopView />} />
-        <Route path="/blog"    element={<BlogView />} />
+        <Route path="/blog"         element={<BlogView />} />
+        <Route path="/blog/:slug"   element={<BlogPost />} />
         <Route path="/contact" element={<ContactView />} />
         <Route path="*"        element={<HomeView />} />
       </Routes>

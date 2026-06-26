@@ -68,7 +68,8 @@ office-affiliate/
 │   │   └── api.js
 │   ├── utils/
 │   │   ├── formatters.js
-│   │   └── parseFrontmatter.js   # YAML frontmatter parser (no dependencies)
+│   │   ├── parseFrontmatter.js   # YAML frontmatter parser (no dependencies)
+│   │   └── posts.js              # parses all .md files, exports POSTS + getPostBySlug
 │   └── components/
 │       ├── Ticker.jsx            # animated deals ticker bar
 │       ├── Navigation.jsx        # sticky header, logo, nav links, cart
@@ -114,10 +115,10 @@ office-affiliate/
 
 ### Blog
 
-- Six article cards with color-coded thumbnails — click any card to open the full post
+- Six article cards with color-coded thumbnails — click any card to navigate to `/blog/:slug`
 - Tag, title, excerpt, date, read time per card
 - Full post reader with rendered markdown, tables, and styled typography
-- Back button returns to the card grid without losing scroll position
+- Back button returns to `/blog`; unknown slugs redirect to `/blog` automatically
 
 ### Contact
 
@@ -137,9 +138,10 @@ React Router v6 (`react-router-dom`) with `BrowserRouter`. Each view maps to a r
 | `/about` | AboutView |
 | `/shop` | ShopView |
 | `/blog` | BlogView |
+| `/blog/:slug` | BlogPost |
 | `/contact` | ContactView |
 
-`HomeView` uses `useNavigate` for CTA buttons. `Navigation` handles scrolling to top on each link click.
+`HomeView` uses `useNavigate` for CTA buttons. `Navigation` handles scrolling to top on each link click. Post data is centralised in `src/utils/posts.js` — `POSTS` array and `getPostBySlug(slug)` are shared between `BlogView` and `BlogPost`.
 
 ***
 
