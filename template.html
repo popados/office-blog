@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeskHaven — Office Supply Picks</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1A1A1A;
+    --ink-soft:  #3D3D3D;
+    --slate:     #6B6B6B;
+    --rule:      #E2E0DA;
+    --bg:        #F8F6F1;
+    --surface:   #FFFFFF;
+    --teal:      #00796B;
+    --teal-lt:   #E0F2F0;
+    --teal-mid:  #00695C;
+    --amber:     #F59E0B;
+    --amber-lt:  #FEF3C7;
+    --red-lt:    #FEE2E2;
+    --red:       #DC2626;
+    --green-lt:  #DCFCE7;
+    --green:     #16A34A;
+    --font-ui:   -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body { font-family: var(--font-ui); background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5; }
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; font-family: inherit; }
+
+  /* ── ticker ── */
+  .ticker-wrap { background: var(--ink); overflow: hidden; height: 34px; display: flex; align-items: center; }
+  .ticker-label { background: var(--teal); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 0 14px; height: 100%; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; z-index: 1; }
+  .ticker-track { display: flex; gap: 0; white-space: nowrap; animation: ticker 32s linear infinite; }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item { color: #E5E5E5; font-size: 12px; padding: 0 28px; border-right: 1px solid #333; display: flex; align-items: center; gap: 8px; }
+  .ticker-item .save { color: var(--teal); font-weight: 600; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ── nav ── */
+  .nav { background: var(--surface); border-bottom: 1px solid var(--rule); height: 56px; display: flex; align-items: center; padding: 0 24px; gap: 0; position: sticky; top: 0; z-index: 100; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; margin-right: 32px; }
+  .brand-mark { width: 34px; height: 34px; background: var(--teal); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+  .brand-mark svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .brand-name { font-size: 17px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  .brand-name span { color: var(--teal); }
+  .nav-links { display: flex; align-items: center; gap: 2px; flex: 1; }
+  .nav-link { font-size: 13px; color: var(--slate); padding: 6px 12px; border-radius: 5px; font-weight: 500; }
+  .nav-link:hover { background: var(--bg); color: var(--ink); }
+  .nav-link.active { color: var(--ink); }
+  .nav-link.hot { color: var(--red); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .search-box { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 12px; width: 200px; }
+  .search-box input { border: none; background: transparent; font-size: 13px; color: var(--ink); outline: none; width: 100%; }
+  .search-box input::placeholder { color: var(--slate); }
+  .search-icon { color: var(--slate); flex-shrink: 0; }
+  .nav-cta { background: var(--teal); color: #fff; border: none; border-radius: 6px; padding: 7px 14px; font-size: 13px; font-weight: 600; }
+  .nav-cta:hover { background: var(--teal-mid); }
+
+  /* ── hero ── */
+  .hero { display: grid; grid-template-columns: 1fr 380px; border-bottom: 1px solid var(--rule); }
+  .hero-main { padding: 40px 32px 40px 24px; border-right: 1px solid var(--rule); }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--teal); background: var(--teal-lt); padding: 4px 10px; border-radius: 4px; margin-bottom: 16px; }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+  .hero-h1 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; line-height: 1.1; letter-spacing: -.03em; color: var(--ink); margin-bottom: 14px; }
+  .hero-h1 em { font-style: normal; color: var(--teal); }
+  .hero-sub { font-size: 15px; color: var(--slate); line-height: 1.7; max-width: 480px; margin-bottom: 24px; }
+  .hero-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--teal); color: #fff; border: none; border-radius: 7px; padding: 11px 20px; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
+  .btn-primary:hover { background: var(--teal-mid); }
+  .btn-ghost { background: transparent; color: var(--slate); border: 1px solid var(--rule); border-radius: 7px; padding: 11px 18px; font-size: 14px; font-weight: 500; }
+  .btn-ghost:hover { border-color: #ccc; color: var(--ink); }
+  .hero-trust { display: flex; gap: 20px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .trust-item { text-align: center; }
+  .trust-num { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+  .trust-lbl { font-size: 11px; color: var(--slate); margin-top: 1px; }
+
+  .hero-side { padding: 24px; background: var(--bg); display: flex; flex-direction: column; gap: 0; }
+  .side-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--slate); margin-bottom: 12px; }
+  .top-pick { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .top-pick:last-of-type { border-bottom: none; }
+  .pick-rank { font-size: 11px; font-weight: 800; color: var(--teal); width: 18px; flex-shrink: 0; padding-top: 2px; }
+  .pick-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .pick-body { flex: 1; }
+  .pick-name { font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 3px; }
+  .pick-brand { font-size: 11px; color: var(--slate); }
+  .pick-right { text-align: right; flex-shrink: 0; }
+  .pick-price { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .pick-orig { font-size: 11px; color: var(--slate); text-decoration: line-through; }
+  .pick-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin-top: 3px; }
+  .b-sale { background: var(--green-lt); color: var(--green); }
+  .b-pick { background: var(--teal-lt); color: var(--teal); }
+  .b-hot { background: var(--red-lt); color: var(--red); }
+  .b-new { background: var(--amber-lt); color: #92400E; }
+
+  /* ── cats ── */
+  .cats { background: var(--surface); border-bottom: 1px solid var(--rule); padding: 0 24px; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .cats::-webkit-scrollbar { display: none; }
+  .cat { display: flex; align-items: center; gap: 7px; padding: 13px 16px; font-size: 13px; font-weight: 500; color: var(--slate); border-bottom: 2px solid transparent; white-space: nowrap; cursor: pointer; transition: color .15s; }
+  .cat:hover { color: var(--ink); }
+  .cat.active { color: var(--teal); border-bottom-color: var(--teal); }
+  .cat-icon { font-size: 15px; }
+
+  /* ── layout body ── */
+  .body-layout { display: grid; grid-template-columns: 220px 1fr; max-width: 1200px; margin: 0 auto; }
+  .sidebar { border-right: 1px solid var(--rule); padding: 20px 16px; background: var(--surface); }
+  .filt-head { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--slate); margin-bottom: 10px; margin-top: 20px; }
+  .filt-head:first-child { margin-top: 0; }
+  .filt-item { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; font-size: 13px; color: var(--slate); cursor: pointer; }
+  .filt-item:hover { color: var(--ink); }
+  .filt-item.on { color: var(--ink); }
+  .filt-left { display: flex; align-items: center; gap: 7px; }
+  .check { width: 15px; height: 15px; border: 1.5px solid var(--rule); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check.on { background: var(--teal); border-color: var(--teal); }
+  .check.on::after { content: ''; width: 7px; height: 5px; border-left: 1.5px solid #fff; border-bottom: 1.5px solid #fff; transform: rotate(-45deg) translate(1px, -1px); }
+  .filt-count { font-size: 11px; color: #BBB; }
+  .price-track { width: 100%; height: 3px; background: var(--rule); border-radius: 2px; margin: 8px 0 4px; position: relative; }
+  .price-fill { position: absolute; left: 0; right: 20%; height: 100%; background: var(--teal); border-radius: 2px; }
+  .price-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--slate); }
+  .stars-filter { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--amber); cursor: pointer; padding: 4px 0; }
+  .stars-filter span { color: var(--slate); font-size: 12px; }
+  .stars-filter:hover span { color: var(--ink); }
+
+  /* ── products ── */
+  .content { padding: 20px; background: var(--bg); }
+  .content-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .results-label { font-size: 13px; color: var(--slate); }
+  .sort-row { display: flex; align-items: center; gap: 6px; }
+  .sort-lbl { font-size: 12px; color: var(--slate); }
+  .sort-pill { font-size: 12px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 20px; color: var(--slate); background: var(--surface); cursor: pointer; }
+  .sort-pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  .featured-strip { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; }
+  .feat-badge { background: var(--teal); color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 3px 8px; border-radius: 4px; flex-shrink: 0; }
+  .feat-icon { width: 52px; height: 52px; border-radius: 10px; background: var(--teal-lt); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .feat-info { flex: 1; }
+  .feat-name { font-size: 15px; font-weight: 700; color: var(--ink); }
+  .feat-desc { font-size: 12px; color: var(--slate); margin-top: 2px; line-height: 1.5; }
+  .feat-stars { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 11px; color: var(--slate); }
+  .feat-stars .s { color: var(--amber); font-size: 12px; }
+  .feat-right { text-align: right; flex-shrink: 0; }
+  .feat-price { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; }
+  .feat-orig { font-size: 12px; color: var(--slate); text-decoration: line-through; }
+  .feat-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; background: var(--teal); color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .feat-cta:hover { background: var(--teal-mid); }
+  .feat-save { font-size: 11px; font-weight: 700; color: var(--green); margin-top: 2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .pcard { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .15s; }
+  .pcard:hover { border-color: #ccc; }
+  .pcard-img { height: 100px; display: flex; align-items: center; justify-content: center; font-size: 36px; border-bottom: 1px solid var(--rule); position: relative; }
+  .pcard-tag { position: absolute; top: 8px; left: 8px; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; }
+  .pcard-body { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+  .pcard-brand { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); }
+  .pcard-name { font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+  .pcard-stars { display: flex; align-items: center; gap: 3px; font-size: 11px; color: var(--amber); }
+  .pcard-stars span { color: var(--slate); }
+  .pcard-price-row { display: flex; align-items: baseline; gap: 6px; margin-top: auto; padding-top: 8px; }
+  .pcard-price { font-size: 16px; font-weight: 800; color: var(--ink); }
+  .pcard-orig { font-size: 11px; color: var(--slate); text-decoration: line-through; }
+  .pcard-off { font-size: 11px; font-weight: 700; color: var(--green); }
+  .pcard-foot { padding: 10px 12px; border-top: 1px solid var(--rule); }
+  .pcard-btn { width: 100%; background: transparent; border: 1px solid var(--rule); border-radius: 6px; padding: 8px; font-size: 12px; font-weight: 600; color: var(--ink); display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .pcard-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+  /* ── editorial ── */
+  .editorial { margin-top: 20px; }
+  .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title { font-size: 14px; font-weight: 800; color: var(--ink); text-transform: uppercase; letter-spacing: .06em; }
+  .section-more { font-size: 12px; color: var(--teal); font-weight: 600; }
+  .articles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .article { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; }
+  .article-tag { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); background: var(--teal-lt); padding: 2px 7px; border-radius: 3px; margin-bottom: 8px; }
+  .article-title { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.35; margin-bottom: 6px; }
+  .article-excerpt { font-size: 12px; color: var(--slate); line-height: 1.6; }
+  .article-meta { display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 11px; color: var(--slate); }
+  .author-av { width: 22px; height: 22px; border-radius: 50%; background: var(--teal-lt); color: var(--teal); font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .read-link { color: var(--teal); font-weight: 600; margin-left: auto; }
+
+  /* ── footer ── */
+  .footer { background: var(--ink); color: #A0A0A0; padding: 32px 24px 20px; margin-top: 0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+  .footer-brand .brand-mark { margin-bottom: 10px; }
+  .footer-brand .brand-name { color: #fff; margin-bottom: 8px; }
+  .footer-desc { font-size: 12px; line-height: 1.7; color: #808080; }
+  .footer-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #E5E5E5; margin-bottom: 10px; }
+  .footer-link { display: block; font-size: 12px; color: #808080; padding: 3px 0; }
+  .footer-link:hover { color: #E5E5E5; }
+  .footer-bottom { border-top: 1px solid #2A2A2A; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+  .footer-copy { font-size: 11px; color: #555; }
+  .footer-disc { font-size: 11px; color: #555; max-width: 460px; text-align: right; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- deal ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-label">Today's deals</div>
+  <div style="overflow:hidden;flex:1;">
+    <div class="ticker-track">
+      <div class="ticker-item">Pilot G2 12-pack &nbsp;<span class="save">19% off</span>&nbsp; — $14.49</div>
+      <div class="ticker-item">Logitech MX Keys &nbsp;<span class="save">17% off</span>&nbsp; — $99.99</div>
+      <div class="ticker-item">Monitor arm &nbsp;<span class="save">27% off</span>&nbsp; — $39.99</div>
+      <div class="ticker-item">Standing desk converter &nbsp;<span class="save">24% off</span>&nbsp; — $129.99</div>
+      <div class="ticker-item">Leuchtturm1917 notebook &nbsp;<span class="save">top rated</span>&nbsp; — $22.95</div>
+      <div class="ticker-item">Post-it Super Sticky 12-pack &nbsp;<span class="save">new deal</span>&nbsp; — $16.29</div>
+      <div class="ticker-item">HP LaserJet toner &nbsp;<span class="save">31% off</span>&nbsp; — $38.00</div>
+      <div class="ticker-item">Pilot G2 12-pack &nbsp;<span class="save">19% off</span>&nbsp; — $14.49</div>
+      <div class="ticker-item">Logitech MX Keys &nbsp;<span class="save">17% off</span>&nbsp; — $99.99</div>
+      <div class="ticker-item">Monitor arm &nbsp;<span class="save">27% off</span>&nbsp; — $39.99</div>
+      <div class="ticker-item">Standing desk converter &nbsp;<span class="save">24% off</span>&nbsp; — $129.99</div>
+      <div class="ticker-item">Leuchtturm1917 notebook &nbsp;<span class="save">top rated</span>&nbsp; — $22.95</div>
+      <div class="ticker-item">Post-it Super Sticky 12-pack &nbsp;<span class="save">new deal</span>&nbsp; — $16.29</div>
+      <div class="ticker-item">HP LaserJet toner &nbsp;<span class="save">31% off</span>&nbsp; — $38.00</div>
+    </div>
+  </div>
+</div>
+
+<!-- nav -->
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 19l-7-7 7-7"/><path d="M19 12H5"/></svg>
+    </div>
+    <span class="brand-name">Desk<span>Haven</span></span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link active" href="#">Home</a>
+    <a class="nav-link" href="#">Reviews</a>
+    <a class="nav-link" href="#">Best picks</a>
+    <a class="nav-link hot" href="#">🔥 Deals</a>
+    <a class="nav-link" href="#">Blog</a>
+    <a class="nav-link" href="#">About</a>
+  </div>
+  <div class="nav-right">
+    <div class="search-box">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input placeholder="Search products…" type="text">
+    </div>
+    <button class="nav-cta">Subscribe</button>
+  </div>
+</nav>
+
+<!-- hero -->
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-eyebrow">Live picks · updated daily</div>
+    <h1 class="hero-h1">The office gear<br>your desk <em>actually</em> deserves</h1>
+    <p class="hero-sub">Independent reviews and affiliate picks tested by writers, designers, and remote workers. No brand deals. No filler. Just the stuff worth buying.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        See all top picks
+      </button>
+      <button class="btn-ghost">Browse by category</button>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-num">340+</div><div class="trust-lbl">Products reviewed</div></div>
+      <div class="trust-item"><div class="trust-num">14k</div><div class="trust-lbl">Monthly readers</div></div>
+      <div class="trust-item"><div class="trust-num">4.8★</div><div class="trust-lbl">Avg pick rating</div></div>
+      <div class="trust-item"><div class="trust-num">6 yrs</div><div class="trust-lbl">Publishing</div></div>
+    </div>
+  </div>
+
+  <div class="hero-side">
+    <div class="side-head">This week's top picks</div>
+    <div class="top-pick">
+      <span class="pick-rank">#1</span>
+      <div class="pick-icon" style="background:#E0F2F0">✒️</div>
+      <div class="pick-body"><div class="pick-name">Pilot G2 Fine pens</div><div class="pick-brand">Pilot · 12-pack</div></div>
+      <div class="pick-right"><div class="pick-price">$14.49</div><div class="pick-orig">$18.00</div><span class="pick-badge b-sale">19% off</span></div>
+    </div>
+    <div class="top-pick">
+      <span class="pick-rank">#2</span>
+      <div class="pick-icon" style="background:#EDE9FE">⌨️</div>
+      <div class="pick-body"><div class="pick-name">Logitech MX Keys</div><div class="pick-brand">Logitech · wireless</div></div>
+      <div class="pick-right"><div class="pick-price">$99.99</div><div class="pick-orig">$119.99</div><span class="pick-badge b-sale">17% off</span></div>
+    </div>
+    <div class="top-pick">
+      <span class="pick-rank">#3</span>
+      <div class="pick-icon" style="background:#DCFCE7">📓</div>
+      <div class="pick-body"><div class="pick-name">Leuchtturm1917 A5</div><div class="pick-brand">Leuchtturm · dot grid</div></div>
+      <div class="pick-right"><div class="pick-price">$22.95</div><span class="pick-badge b-pick">Editor's pick</span></div>
+    </div>
+    <div class="top-pick">
+      <span class="pick-rank">#4</span>
+      <div class="pick-icon" style="background:#FEF3C7">🖥️</div>
+      <div class="pick-body"><div class="pick-name">Monitor arm stand</div><div class="pick-brand">Amazon Basics · single</div></div>
+      <div class="pick-right"><div class="pick-price">$39.99</div><div class="pick-orig">$54.99</div><span class="pick-badge b-hot">Hot deal</span></div>
+    </div>
+    <div class="top-pick">
+      <span class="pick-rank">#5</span>
+      <div class="pick-icon" style="background:#FEE2E2">📋</div>
+      <div class="pick-body"><div class="pick-name">Post-it Super Sticky</div><div class="pick-brand">3M · 12-pack</div></div>
+      <div class="pick-right"><div class="pick-price">$16.29</div><span class="pick-badge b-new">New</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- category tabs -->
+<div class="cats">
+  <div class="cat active"><span class="cat-icon">⊞</span> All products</div>
+  <div class="cat"><span class="cat-icon">✏️</span> Writing tools</div>
+  <div class="cat"><span class="cat-icon">🪑</span> Ergonomics</div>
+  <div class="cat"><span class="cat-icon">⌨️</span> Tech accessories</div>
+  <div class="cat"><span class="cat-icon">🖨️</span> Printing</div>
+  <div class="cat"><span class="cat-icon">📁</span> Filing</div>
+  <div class="cat"><span class="cat-icon">💡</span> Lighting</div>
+  <div class="cat"><span class="cat-icon">✂️</span> Accessories</div>
+</div>
+
+<!-- main body: sidebar + content -->
+<div class="body-layout">
+  <aside class="sidebar">
+    <div class="filt-head">Brand</div>
+    <div class="filt-item on"><div class="filt-left"><div class="check on"></div> Pilot</div><span class="filt-count">24</span></div>
+    <div class="filt-item on"><div class="filt-left"><div class="check on"></div> Logitech</div><span class="filt-count">18</span></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> Staedtler</div><span class="filt-count">11</span></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> 3M</div><span class="filt-count">9</span></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> Moleskine</div><span class="filt-count">7</span></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> FLEXISPOT</div><span class="filt-count">5</span></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> HP</div><span class="filt-count">12</span></div>
+
+    <div class="filt-head">Price</div>
+    <div class="price-track"><div class="price-fill"></div></div>
+    <div class="price-labels"><span>$0</span><span>Up to $200</span></div>
+
+    <div class="filt-head">Rating</div>
+    <div class="stars-filter">★★★★★ <span>5 stars only (142)</span></div>
+    <div class="stars-filter on">★★★★☆ <span>4+ stars (280)</span></div>
+    <div class="stars-filter">★★★☆☆ <span>3+ stars (340)</span></div>
+
+    <div class="filt-head">Availability</div>
+    <div class="filt-item on"><div class="filt-left"><div class="check on"></div> In stock</div></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> On sale</div></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> Prime eligible</div></div>
+
+    <div class="filt-head">Source</div>
+    <div class="filt-item on"><div class="filt-left"><div class="check on"></div> Amazon</div></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> Staples</div></div>
+    <div class="filt-item"><div class="filt-left"><div class="check"></div> Office Depot</div></div>
+  </aside>
+
+  <div class="content">
+    <div class="content-bar">
+      <span class="results-label">Showing <strong>147</strong> products</span>
+      <div class="sort-row">
+        <span class="sort-lbl">Sort by:</span>
+        <button class="sort-pill active">Top rated</button>
+        <button class="sort-pill">Price: low</button>
+        <button class="sort-pill">Price: high</button>
+        <button class="sort-pill">Newest</button>
+        <button class="sort-pill">Best discount</button>
+      </div>
+    </div>
+
+    <!-- featured -->
+    <div class="featured-strip">
+      <span class="feat-badge">⭐ Editor's pick</span>
+      <div class="feat-icon">🪑</div>
+      <div class="feat-info">
+        <div class="feat-name">FlexiChair Pro ergonomic mesh chair</div>
+        <div class="feat-desc">Lumbar support, adjustable armrests, breathable mesh back. Our top-rated chair after 6 months of real-desk testing by our team.</div>
+        <div class="feat-stars"><span class="s">★★★★★</span> 4.9 · 2,341 reviews · Verified purchase</div>
+      </div>
+      <div class="feat-right">
+        <div class="feat-orig">Was $249.00</div>
+        <div class="feat-price">$189.99</div>
+        <div class="feat-save">You save $59.01 (24%)</div>
+        <button class="feat-cta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View on Amazon
+        </button>
+      </div>
+    </div>
+
+    <!-- product grid -->
+    <div class="grid">
+      <div class="pcard">
+        <div class="pcard-img" style="background:#E0F2F0">✒️<span class="pcard-tag b-sale">19% off</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Pilot</div>
+          <div class="pcard-name">G2 Fine ballpoint pens — 12-pack</div>
+          <div class="pcard-stars">★★★★★ <span>4.8 (9.2k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$14.49</span>
+            <span class="pcard-orig">$18.00</span>
+            <span class="pcard-off">Save 19%</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img" style="background:#DCFCE7">📓<span class="pcard-tag b-pick">Editor's pick</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Leuchtturm1917</div>
+          <div class="pcard-name">A5 dot-grid hardcover notebook</div>
+          <div class="pcard-stars">★★★★★ <span>4.9 (4.1k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$22.95</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img" style="background:#FEF3C7">🖥️<span class="pcard-tag b-hot">Hot</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Amazon Basics</div>
+          <div class="pcard-name">Single monitor arm — height adjustable</div>
+          <div class="pcard-stars">★★★★☆ <span>4.6 (6.8k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$39.99</span>
+            <span class="pcard-orig">$54.99</span>
+            <span class="pcard-off">Save 27%</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img" style="background:#EDE9FE">⌨️<span class="pcard-tag b-sale">17% off</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">Logitech</div>
+          <div class="pcard-name">MX Keys wireless keyboard</div>
+          <div class="pcard-stars">★★★★★ <span>4.8 (12k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$99.99</span>
+            <span class="pcard-orig">$119.99</span>
+            <span class="pcard-off">Save 17%</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img" style="background:#FEE2E2">📋<span class="pcard-tag b-new">New</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">3M</div>
+          <div class="pcard-name">Post-it Super Sticky notes — 12 pads</div>
+          <div class="pcard-stars">★★★★★ <span>4.7 (3.3k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$16.29</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-img" style="background:#E0F2F0">📐<span class="pcard-tag b-sale">24% off</span></div>
+        <div class="pcard-body">
+          <div class="pcard-brand">FLEXISPOT</div>
+          <div class="pcard-name">Standing desk converter — 35"</div>
+          <div class="pcard-stars">★★★★☆ <span>4.5 (2.1k reviews)</span></div>
+          <div class="pcard-price-row">
+            <span class="pcard-price">$129.99</span>
+            <span class="pcard-orig">$169.99</span>
+            <span class="pcard-off">Save 24%</span>
+          </div>
+        </div>
+        <div class="pcard-foot"><button class="pcard-btn">↗ View deal on Amazon</button></div>
+      </div>
+    </div>
+
+    <!-- editorial section -->
+    <div class="editorial">
+      <div class="section-head">
+        <span class="section-title">From the desk</span>
+        <a class="section-more" href="#">All articles →</a>
+      </div>
+      <div class="articles">
+        <div class="article">
+          <span class="article-tag">Keyboards</span>
+          <div class="article-title">Why we switched to mechanical keyboards — and haven't looked back</div>
+          <div class="article-excerpt">After six months comparing membrane vs. mechanical across a team of writers and developers, the verdict was clear. Here's what changed, and which models made the cut.</div>
+          <div class="article-meta">
+            <div class="author-av">JK</div>
+            Jordan Kim · Jun 18
+            <a class="read-link" href="#">Read →</a>
+          </div>
+        </div>
+        <div class="article">
+          <span class="article-tag">Ergonomics</span>
+          <div class="article-title">The $200 chair test: 8 budget picks ranked after 3 months of sitting</div>
+          <div class="article-excerpt">We bought and tested eight chairs under $200 to find the ones that don't collapse your posture by Friday. One surprised us. One was a disaster.</div>
+          <div class="article-meta">
+            <div class="author-av">RL</div>
+            Rosa Lin · Jun 12
+            <a class="read-link" href="#">Read →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand-mark" style="margin-bottom:10px">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l-7-7 7-7"/><path d="M19 12H5"/></svg>
+      </div>
+      <div class="brand-name" style="color:#fff;font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px">Desk<span style="color:#4DB6AC">Haven</span></div>
+      <p class="footer-desc">Independent office supply reviews and affiliate picks since 2019. We buy everything ourselves. No sponsored posts, ever.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <a class="footer-link" href="#">All reviews</a>
+      <a class="footer-link" href="#">Best picks</a>
+      <a class="footer-link" href="#">Deals today</a>
+      <a class="footer-link" href="#">Gift guide</a>
+      <a class="footer-link" href="#">Blog</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Categories</div>
+      <a class="footer-link" href="#">Writing tools</a>
+      <a class="footer-link" href="#">Ergonomics</a>
+      <a class="footer-link" href="#">Tech accessories</a>
+      <a class="footer-link" href="#">Printing</a>
+      <a class="footer-link" href="#">Lighting</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <a class="footer-link" href="#">About us</a>
+      <a class="footer-link" href="#">How we review</a>
+      <a class="footer-link" href="#">Contact</a>
+      <a class="footer-link" href="#">Privacy policy</a>
+      <a class="footer-link" href="#">Advertise</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 DeskHaven. All rights reserved.</span>
+    <span class="footer-disc">This site contains affiliate links. We earn a small commission when you buy through our links, at no extra cost to you. All products are independently selected.</span>
+  </div>
+</footer>
+
+</body>
+</html>
