@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PRODUCTS, BRANDS, FEATURED } from "@/src/data/shop.js";
 
 const CAT_TABS = [
   { id: "all",  icon: "⊞",  label: "All products" },
@@ -34,14 +35,14 @@ function ProductCard({ p }) {
   );
 }
 
-export default function ShopView({ products, initialBrands, featured }) {
+export default function ShopView() {
   const [activeCat, setActiveCat]   = useState("all");
   const [activeSort, setActiveSort] = useState("Top rated");
-  const [brands, setBrands]         = useState(initialBrands);
+  const [brands, setBrands]         = useState(BRANDS);
 
   const filtered = activeCat === "all"
-    ? products
-    : products.filter(p => p.cat === activeCat);
+    ? PRODUCTS
+    : PRODUCTS.filter(p => p.cat === activeCat);
 
   function toggleBrand(i) {
     setBrands(prev => prev.map((b, idx) => idx === i ? { ...b, on: !b.on } : b));
@@ -109,16 +110,16 @@ export default function ShopView({ products, initialBrands, featured }) {
 
           <div className="featured-strip">
             <span className="feat-badge">⭐ Editor's pick</span>
-            <div className="feat-icon">{featured.icon}</div>
+            <div className="feat-icon">{FEATURED.icon}</div>
             <div className="feat-info">
-              <div className="feat-name">{featured.name}</div>
-              <div className="feat-desc">{featured.desc}</div>
-              <div className="feat-stars"><span className="s">★★★★★</span> {featured.stars}</div>
+              <div className="feat-name">{FEATURED.name}</div>
+              <div className="feat-desc">{FEATURED.desc}</div>
+              <div className="feat-stars"><span className="s">★★★★★</span> {FEATURED.stars}</div>
             </div>
             <div className="feat-right">
-              <div className="feat-orig">Was {featured.orig}</div>
-              <div className="feat-price">{featured.price}</div>
-              <div className="feat-save">{featured.saving}</div>
+              <div className="feat-orig">Was {FEATURED.orig}</div>
+              <div className="feat-price">{FEATURED.price}</div>
+              <div className="feat-save">{FEATURED.saving}</div>
               <button className="feat-cta">↗ View on Amazon</button>
             </div>
           </div>
