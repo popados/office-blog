@@ -302,8 +302,7 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
+      "initialRevalidateSeconds": false,
       "srcRoute": "/shop",
       "dataRoute": "/shop.rsc",
       "allowHeader": [
