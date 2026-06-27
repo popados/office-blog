@@ -1,0 +1,476 @@
+
+<style>
+  .guide-wrap { padding: 1.5rem 0; font-family: var(--font-sans); }
+  .guide-header { margin-bottom: 2rem; }
+  .guide-header h1 { font-size: 22px; font-weight: 500; color: var(--text-primary); margin: 0 0 6px; }
+  .guide-header p { font-size: 15px; color: var(--text-secondary); margin: 0; }
+
+  .phase-tabs { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .phase-tab { padding: 6px 14px; border-radius: var(--radius); border: 0.5px solid var(--border-strong); background: transparent; font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; }
+  .phase-tab.active { background: var(--bg-accent); color: var(--text-accent); border-color: var(--border-accent); }
+  .phase-tab:hover:not(.active) { background: var(--surface-1); color: var(--text-primary); }
+
+  .phase-panel { display: none; }
+  .phase-panel.active { display: block; }
+
+  .phase-intro { background: var(--surface-1); border-radius: 12px; border: 0.5px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+  .phase-intro h2 { font-size: 16px; font-weight: 500; color: var(--text-primary); margin: 0 0 4px; }
+  .phase-intro p { font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+  .phase-goal { display: inline-block; margin-top: 8px; font-size: 12px; background: var(--bg-success); color: var(--text-success); padding: 3px 10px; border-radius: var(--radius); }
+
+  .days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+  .day-card { background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .day-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+  .day-badge { min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; }
+  .day-title { font-size: 14px; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin: 0; }
+  .day-type { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .day-tasks { list-style: none; padding: 0; margin: 0; }
+  .day-tasks li { font-size: 13px; color: var(--text-secondary); padding: 4px 0; border-top: 0.5px solid var(--border); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+  .day-tasks li i { font-size: 14px; margin-top: 2px; flex-shrink: 0; color: var(--text-muted); }
+  .tip-tag { display: inline-block; font-size: 11px; background: var(--bg-warning); color: var(--text-warning); padding: 2px 7px; border-radius: 4px; margin-top: 8px; }
+  .accent-tag { display: inline-block; font-size: 11px; background: var(--bg-accent); color: var(--text-accent); padding: 2px 7px; border-radius: 4px; margin-top: 8px; }
+</style>
+
+<div class="guide-wrap">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">30-day affiliate blog posting guide divided into four weekly phases</h2>
+
+  <div class="guide-header">
+    <h1>30-day affiliate posting guide</h1>
+    <p>A structured roadmap to launch, grow, and optimize your affiliate blog content.</p>
+  </div>
+
+  <div class="phase-tabs">
+    <button class="phase-tab active" onclick="showPhase('w1')">Week 1 — Foundation</button>
+    <button class="phase-tab" onclick="showPhase('w2')">Week 2 — Content Blitz</button>
+    <button class="phase-tab" onclick="showPhase('w3')">Week 3 — Promotion</button>
+    <button class="phase-tab" onclick="showPhase('w4')">Week 4 — Optimize</button>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="phase-panel active" id="w1">
+    <div class="phase-intro">
+      <h2>Week 1 — Foundation (Days 1–7)</h2>
+      <p>Set up your affiliate accounts, research your niche, and publish your first anchor content before promoting anything.</p>
+      <span class="phase-goal">Goal: 2 posts live + affiliate links approved</span>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">1</div>
+          <div><p class="day-title">Niche audit & affiliate signup</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Confirm niche: narrow it to one problem you solve</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Sign up for 3–5 affiliate programs (Amazon, ShareASale, or niche-specific)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Bookmark affiliate dashboards & note approval times</li>
+        </ul>
+        <span class="tip-tag">Tip: prioritize programs with 30-day+ cookies</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">2</div>
+          <div><p class="day-title">Keyword research sprint</p><p class="day-type">SEO</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find 10 low-competition buyer-intent keywords</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify 3 "best [product]" or "vs." comparison angles</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create a content calendar spreadsheet</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">3</div>
+          <div><p class="day-title">Write your cornerstone review</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a 1,500–2,000 word in-depth product review</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include pros/cons, real-use details, and a verdict</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add affiliate disclosure at the top</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">4</div>
+          <div><p class="day-title">Publish & on-page SEO</p><p class="day-type">Publishing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish review with optimized title, meta description, H2s</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add alt text to all images</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Insert affiliate links naturally (3–5 placements)</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">5</div>
+          <div><p class="day-title">Write a "best of" roundup</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a "Best [X] for [Audience]" listicle (5–7 picks)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link to your Day 3 review within the roundup</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Draft a CTA button for each product</li>
+        </ul>
+        <span class="accent-tag">High conversion format</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">6</div>
+          <div><p class="day-title">Publish roundup + internal links</p><p class="day-type">Publishing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish roundup post</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link back and forth between roundup and your review</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Submit both URLs to Google Search Console</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:var(--bg-accent);color:var(--text-accent);">7</div>
+          <div><p class="day-title">Week 1 review & prep</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Confirm affiliate links are tracking correctly</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check affiliate program approval statuses</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Plan 4 more content topics for Week 2</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="phase-panel" id="w2">
+    <div class="phase-intro">
+      <h2>Week 2 — Content blitz (Days 8–14)</h2>
+      <p>Build content velocity with comparison posts, how-tos, and trust-building pieces that support your affiliate articles.</p>
+      <span class="phase-goal">Goal: 4 more posts live + email list started</span>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">8</div>
+          <div><p class="day-title">Write a comparison post</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write "Product A vs Product B" (1,200+ words)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include a comparison table near the top</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>End with a clear winner recommendation + affiliate link</li>
+        </ul>
+        <span class="accent-tag">High buyer intent</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">9</div>
+          <div><p class="day-title">Publish comparison + setup email</p><p class="day-type">Publishing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish comparison post with all affiliate links</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set up a free email tool (Kit, Mailchimp, etc.)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create a simple opt-in lead magnet (checklist or guide)</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">10</div>
+          <div><p class="day-title">Write a how-to tutorial</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a step-by-step tutorial using an affiliated product</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include screenshots or images to boost dwell time</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>End with a "Get started with [Product]" CTA</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">11</div>
+          <div><p class="day-title">Publish tutorial + social snippets</p><p class="day-type">Publishing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish tutorial post</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create 2–3 social media snippets (quote cards, tips)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Share to Pinterest or relevant Facebook groups</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">12</div>
+          <div><p class="day-title">Trust & authority post</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write an "About" or "My Experience With X" post</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Share personal use case or results with the niche</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>This is non-affiliate — builds reader trust</li>
+        </ul>
+        <span class="tip-tag">Builds long-term credibility</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">13</div>
+          <div><p class="day-title">Publish + add opt-in forms</p><p class="day-type">Publishing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish trust post</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add email opt-in form to your top 2–3 posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set up a welcome email sequence (2–3 emails)</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#C0DD97;color:#27500A;">14</div>
+          <div><p class="day-title">Week 2 review</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check Google Search Console for early impressions</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Review affiliate dashboards for click data</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Plan Week 3 promotion & outreach targets</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="phase-panel" id="w3">
+    <div class="phase-intro">
+      <h2>Week 3 — Promotion (Days 15–21)</h2>
+      <p>Stop publishing and start promoting. Drive traffic to your existing content through backlinks, social, and community outreach.</p>
+      <span class="phase-goal">Goal: 3 backlinks + 200+ pageviews this week</span>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">15</div>
+          <div><p class="day-title">Guest post outreach</p><p class="day-type">Outreach</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find 5 blogs in your niche accepting guest posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Send personalized pitches with 2–3 topic ideas each</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check "write for us" pages and editorial guidelines</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">16</div>
+          <div><p class="day-title">Write a new SEO post</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a new post targeting a different buyer keyword</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add FAQ schema-friendly questions and answers</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Publish and interlink with existing content</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">17</div>
+          <div><p class="day-title">Reddit & forum visibility</p><p class="day-type">Promotion</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find 3 relevant subreddits or forums in your niche</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Leave genuinely helpful comments (no spam linking)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Post value-first content with a link if rules allow</li>
+        </ul>
+        <span class="tip-tag">Comment-first, link second</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">18</div>
+          <div><p class="day-title">Pinterest & visual SEO</p><p class="day-type">Promotion</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create 2–3 Pinterest pins for your best posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write keyword-rich pin descriptions</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Join 1–2 group boards in your niche</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">19</div>
+          <div><p class="day-title">Broken link building</p><p class="day-type">Outreach</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Use Ahrefs or free tools to find broken links in your niche</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Email site owners offering your content as a replacement</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Target 5–10 prospects per outreach batch</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">20</div>
+          <div><p class="day-title">Social media scheduling</p><p class="day-type">Promotion</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Schedule 1 week of posts across 1–2 social platforms</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Mix content types: tips, polls, behind-the-scenes</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Include a link to a post in every 3rd–4th update</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#FAC775;color:#633806;">21</div>
+          <div><p class="day-title">Week 3 traffic review</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check Google Analytics for traffic sources</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Note which posts have the highest engagement</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Plan Week 4 optimization targets based on data</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="phase-panel" id="w4">
+    <div class="phase-intro">
+      <h2>Week 4 — Optimize (Days 22–30)</h2>
+      <p>Use real data to double down on what's working. Improve your top posts, test CTAs, and build repeatable monthly processes.</p>
+      <span class="phase-goal">Goal: 1st affiliate commission + repeatable workflow</span>
+    </div>
+    <div class="days-grid">
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">22</div>
+          <div><p class="day-title">Improve your top post</p><p class="day-type">Optimization</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify your most-visited post so far</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add 300–500 more words addressing reader questions</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Test a new headline and update publish date</li>
+        </ul>
+        <span class="tip-tag">Updating > publishing new</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">23</div>
+          <div><p class="day-title">CTA & conversion audit</p><p class="day-type">Optimization</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check affiliate click-through rates in your dashboard</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Rewrite weak CTAs ("check price" → "see today's deal")</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add a sticky or in-content CTA button to top posts</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">24</div>
+          <div><p class="day-title">Write a seasonal or trending post</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Find a trending topic in your niche (Google Trends, Reddit)</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Write a timely 1,000-word post while it's hot</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Promote immediately on all channels</li>
+        </ul>
+        <span class="accent-tag">Timely = fast traffic</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">25</div>
+          <div><p class="day-title">Email list nurture</p><p class="day-type">Email</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Send your first broadcast email to subscribers</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Share your best post + one product recommendation</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Ask one question to boost reply rate and learn needs</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">26</div>
+          <div><p class="day-title">Speed & UX audit</p><p class="day-type">Technical</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Run your top post through PageSpeed Insights</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Compress images over 200KB</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Check mobile layout on your phone for readability</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">27</div>
+          <div><p class="day-title">Add schema markup</p><p class="day-type">Technical SEO</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add Review schema to product review posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add FAQ schema to how-to and comparison posts</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Validate with Google's Rich Results Test</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">28</div>
+          <div><p class="day-title">Write a resource/tools page</p><p class="day-type">Writing</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Create a "Tools I Use" or "Resources" page</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>List 8–12 products with your affiliate links + brief notes</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Link to this page from your nav and top posts</li>
+        </ul>
+        <span class="tip-tag">Passive traffic earner</span>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">29</div>
+          <div><p class="day-title">Competitor content gap analysis</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Review 2–3 competitors' top posts in your niche</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify angles or products they haven't covered</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Add 5 new topic ideas to your content calendar</li>
+        </ul>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <div class="day-badge" style="background:#CECBF6;color:#3C3489;">30</div>
+          <div><p class="day-title">30-day review & Month 2 plan</p><p class="day-type">Strategy</p></div>
+        </div>
+        <ul class="day-tasks">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Review: total posts, clicks, commissions, email subs</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Identify your 2 best-performing posts to double down on</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Set Month 2 targets: posts, traffic, and revenue goals</li>
+        </ul>
+        <span class="accent-tag">Milestone: month 1 complete</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showPhase(id) {
+  document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['w1','w2','w3','w4'].indexOf(id);
+  document.querySelectorAll('.phase-tab')[idx].classList.add('active');
+}
+</script>

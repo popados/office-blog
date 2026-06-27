@@ -13,25 +13,11 @@ const CAT_TABS = [
 ];
 
 const INITIAL_BRANDS = [
-  { name: "Pilot",     count: 24, on: true  },
-  { name: "Logitech",  count: 18, on: true  },
-  { name: "Staedtler", count: 11, on: false },
-  { name: "3M",        count: 9,  on: false },
-  { name: "Moleskine", count: 7,  on: false },
-  { name: "FLEXISPOT", count: 5,  on: false },
-  { name: "HP",        count: 12, on: false },
+  { name: "Razer", count: 1, on: true },
 ];
 
 const PRODUCTS = [
-  { icon: "✒️", bg: "#E0F2F0", brand: "Pilot",          name: "G2 Fine ballpoint pens — 12-pack",       stars: "★★★★★", rating: "4.8 (9.2k)", price: "$14.49", orig: "$18.00",  off: "Save 19%", tag: "b-sale", tagLabel: "19% off",      cat: "pens" },
-  { icon: "📓", bg: "#DCFCE7", brand: "Leuchtturm1917", name: "A5 dot-grid hardcover notebook",          stars: "★★★★★", rating: "4.9 (4.1k)", price: "$22.95", orig: "",        off: "",        tag: "b-pick", tagLabel: "Editor's pick", cat: "notebooks" },
-  { icon: "🖥️", bg: "#FEF3C7", brand: "Amazon Basics",  name: "Single monitor arm — height adjustable",  stars: "★★★★☆", rating: "4.6 (6.8k)", price: "$39.99", orig: "$54.99",  off: "Save 27%", tag: "b-hot",  tagLabel: "Hot",          cat: "tech" },
-  { icon: "⌨️", bg: "#EDE9FE", brand: "Logitech",       name: "MX Keys wireless keyboard",               stars: "★★★★★", rating: "4.8 (12k)",  price: "$99.99", orig: "$119.99", off: "Save 17%", tag: "b-sale", tagLabel: "17% off",      cat: "tech" },
-  { icon: "📋", bg: "#FEE2E2", brand: "3M",             name: "Post-it Super Sticky notes — 12 pads",    stars: "★★★★★", rating: "4.7 (3.3k)", price: "$16.29", orig: "",        off: "",        tag: "b-new",  tagLabel: "New",           cat: "essentials" },
-  { icon: "📐", bg: "#E0F2F0", brand: "FLEXISPOT",      name: 'Standing desk converter — 35"',           stars: "★★★★☆", rating: "4.5 (2.1k)", price: "$129.99",orig: "$169.99", off: "Save 24%", tag: "b-sale", tagLabel: "24% off",      cat: "furniture" },
-  { icon: "🖊️", bg: "#FEF3C7", brand: "Zebra",         name: "Sarasa Clip Gel Pens — 10-pack",           stars: "★★★★★", rating: "4.9 (1.2k)", price: "$18.99", orig: "",        off: "",        tag: "b-pick", tagLabel: "Top rated",    cat: "pens" },
-  { icon: "🗂️", bg: "#EDE9FE", brand: "Veikous",       name: "Desktop file organizer — 5-section",       stars: "★★★★☆", rating: "4.6 (543)",  price: "$34.99", orig: "$44.99",  off: "Save 22%", tag: "b-sale", tagLabel: "22% off",      cat: "desk" },
-  { icon: "🖋️", bg: "#DCFCE7", brand: "Lamy",          name: "Safari Fountain Pen — extra fine",         stars: "★★★★★", rating: "4.8 (567)",  price: "$29.99", orig: "",        off: "",        tag: "b-pick", tagLabel: "Editor's pick", cat: "pens" },
+  { icon: "⌨️", bg: "#1a1a2e", brand: "Razer", name: "Huntsman Elite — Opto-Mechanical Gaming Keyboard", stars: "★★★★★", rating: "4.8 (14.3k)", price: "$149.99", orig: "$199.99", off: "Save 25%", tag: "b-pick", tagLabel: "Editor's pick", cat: "tech" },
 ];
 
 const SORT_OPTIONS = ["Top rated", "Price: low", "Price: high", "Newest", "Best discount"];
@@ -105,9 +91,7 @@ export default function ShopView() {
           <div className="price-labels"><span>$0</span><span>Up to $200</span></div>
 
           <div className="filt-section-head">Rating</div>
-          <div className="rating-row">★★★★★ <span>5 stars only (142)</span></div>
-          <div className="rating-row on">★★★★☆ <span>4+ stars (280)</span></div>
-          <div className="rating-row">★★★☆☆ <span>3+ stars (340)</span></div>
+          <div className="rating-row on">★★★★★ <span>4.8 avg (14.3k)</span></div>
 
           <div className="filt-section-head">Availability</div>
           <div className="filt-row on"><div className="filt-left"><div className="filt-check on"></div> In stock</div></div>
@@ -140,16 +124,16 @@ export default function ShopView() {
 
           <div className="featured-strip">
             <span className="feat-badge">⭐ Editor's pick</span>
-            <div className="feat-icon">🪑</div>
+            <div className="feat-icon">⌨️</div>
             <div className="feat-info">
-              <div className="feat-name">FlexiChair Pro ergonomic mesh chair</div>
-              <div className="feat-desc">Lumbar support, adjustable armrests, breathable mesh back. Our top-rated chair after 6 months of real-desk testing.</div>
-              <div className="feat-stars"><span className="s">★★★★★</span> 4.9 · 2,341 reviews · Verified purchase</div>
+              <div className="feat-name">Razer Huntsman Elite — Opto-Mechanical Gaming Keyboard</div>
+              <div className="feat-desc">Linear optical switches, per-key RGB Chroma lighting, magnetic leatherette wrist rest, and a dedicated media dial. The keyboard that earns its place on any serious desk.</div>
+              <div className="feat-stars"><span className="s">★★★★★</span> 4.8 · 14,300+ reviews · Verified purchase</div>
             </div>
             <div className="feat-right">
-              <div className="feat-orig">Was $249.00</div>
-              <div className="feat-price">$189.99</div>
-              <div className="feat-save">You save $59.01 (24%)</div>
+              <div className="feat-orig">Was $199.99</div>
+              <div className="feat-price">$149.99</div>
+              <div className="feat-save">You save $50.00 (25%)</div>
               <button className="feat-cta">↗ View on Amazon</button>
             </div>
           </div>

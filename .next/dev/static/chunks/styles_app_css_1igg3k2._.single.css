@@ -50,6 +50,7 @@
   z-index: 100;
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
   background: #fff;
   position: sticky;
   top: 0;
@@ -148,7 +149,6 @@
   font-size: 1.1rem;
   transition: background .2s, color .2s;
   display: flex;
-  position: relative;
 }
 
 .icon-btn:hover {
@@ -156,20 +156,8 @@
   color: var(--color-primary);
 }
 
-.cart-badge {
-  background: var(--color-primary);
-  color: #fff;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 14px;
-  height: 14px;
-  font-size: .6rem;
-  font-weight: 700;
-  display: flex;
-  position: absolute;
-  top: 2px;
-  right: 2px;
+.nav-toggle {
+  display: none;
 }
 
 .ticker-wrap {

@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/usb-c-hubs-2026":{},"/blog/desk-setup-focus":{},"/blog/fountain-pens-beginners":{},"/blog/leuchtturm-vs-moleskine":{},"/blog/gel-pens-2026":{},"/blog/standing-desk-review":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"6fb12de4d976d71df743e79808996478","previewModeSigningKey":"aa64ef6c835591adc492c13fc3fa29ea5b18fc32b2ffb6ec60922565216f599f","previewModeEncryptionKey":"a98a1bfa916a6b09f1ecfe7ce88a5fc7e8188f6d32085dd147c1a23d498d53a5"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "89e272d93158262f1aa68db7dfcdbc00",
+    "previewModeSigningKey": "8b54eef797a1b4280a1fd55aaea1ea57c432016359f5bf81f2c6a83d5bd48770",
+    "previewModeEncryptionKey": "3c8b27f3e5998f268d7952cf8dfc408ff910b1cfe0060e6c5276f597e2f85c9d"
+  }
+}

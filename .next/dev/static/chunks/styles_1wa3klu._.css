@@ -135,6 +135,7 @@ label {
   z-index: 100;
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
   background: #fff;
   position: sticky;
   top: 0;
@@ -233,7 +234,6 @@ label {
   font-size: 1.1rem;
   transition: background .2s, color .2s;
   display: flex;
-  position: relative;
 }
 
 .icon-btn:hover {
@@ -241,20 +241,8 @@ label {
   color: var(--color-primary);
 }
 
-.cart-badge {
-  background: var(--color-primary);
-  color: #fff;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 14px;
-  height: 14px;
-  font-size: .6rem;
-  font-weight: 700;
-  display: flex;
-  position: absolute;
-  top: 2px;
-  right: 2px;
+.nav-toggle {
+  display: none;
 }
 
 .ticker-wrap {
@@ -1702,13 +1690,42 @@ textarea {
     display: none;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
   .site-nav {
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    z-index: 99;
+    background: #fff;
+    flex-direction: column;
     gap: 0;
+    padding: .75rem 1.5rem 1rem;
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+  }
+
+  .site-nav.open {
+    display: flex;
   }
 
   .site-nav a {
-    padding: .5rem;
-    font-size: .8rem;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+    padding: .75rem 0;
+    font-size: 1rem;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav a.active {
+    border-bottom-color: var(--color-border);
   }
 
   .hero-title {

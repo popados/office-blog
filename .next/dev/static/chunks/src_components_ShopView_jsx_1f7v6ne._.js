@@ -51,167 +51,25 @@ const CAT_TABS = [
 ];
 const INITIAL_BRANDS = [
     {
-        name: "Pilot",
-        count: 24,
+        name: "Razer",
+        count: 1,
         on: true
-    },
-    {
-        name: "Logitech",
-        count: 18,
-        on: true
-    },
-    {
-        name: "Staedtler",
-        count: 11,
-        on: false
-    },
-    {
-        name: "3M",
-        count: 9,
-        on: false
-    },
-    {
-        name: "Moleskine",
-        count: 7,
-        on: false
-    },
-    {
-        name: "FLEXISPOT",
-        count: 5,
-        on: false
-    },
-    {
-        name: "HP",
-        count: 12,
-        on: false
     }
 ];
 const PRODUCTS = [
     {
-        icon: "✒️",
-        bg: "#E0F2F0",
-        brand: "Pilot",
-        name: "G2 Fine ballpoint pens — 12-pack",
-        stars: "★★★★★",
-        rating: "4.8 (9.2k)",
-        price: "$14.49",
-        orig: "$18.00",
-        off: "Save 19%",
-        tag: "b-sale",
-        tagLabel: "19% off",
-        cat: "pens"
-    },
-    {
-        icon: "📓",
-        bg: "#DCFCE7",
-        brand: "Leuchtturm1917",
-        name: "A5 dot-grid hardcover notebook",
-        stars: "★★★★★",
-        rating: "4.9 (4.1k)",
-        price: "$22.95",
-        orig: "",
-        off: "",
-        tag: "b-pick",
-        tagLabel: "Editor's pick",
-        cat: "notebooks"
-    },
-    {
-        icon: "🖥️",
-        bg: "#FEF3C7",
-        brand: "Amazon Basics",
-        name: "Single monitor arm — height adjustable",
-        stars: "★★★★☆",
-        rating: "4.6 (6.8k)",
-        price: "$39.99",
-        orig: "$54.99",
-        off: "Save 27%",
-        tag: "b-hot",
-        tagLabel: "Hot",
-        cat: "tech"
-    },
-    {
         icon: "⌨️",
-        bg: "#EDE9FE",
-        brand: "Logitech",
-        name: "MX Keys wireless keyboard",
+        bg: "#1a1a2e",
+        brand: "Razer",
+        name: "Huntsman Elite — Opto-Mechanical Gaming Keyboard",
         stars: "★★★★★",
-        rating: "4.8 (12k)",
-        price: "$99.99",
-        orig: "$119.99",
-        off: "Save 17%",
-        tag: "b-sale",
-        tagLabel: "17% off",
-        cat: "tech"
-    },
-    {
-        icon: "📋",
-        bg: "#FEE2E2",
-        brand: "3M",
-        name: "Post-it Super Sticky notes — 12 pads",
-        stars: "★★★★★",
-        rating: "4.7 (3.3k)",
-        price: "$16.29",
-        orig: "",
-        off: "",
-        tag: "b-new",
-        tagLabel: "New",
-        cat: "essentials"
-    },
-    {
-        icon: "📐",
-        bg: "#E0F2F0",
-        brand: "FLEXISPOT",
-        name: 'Standing desk converter — 35"',
-        stars: "★★★★☆",
-        rating: "4.5 (2.1k)",
-        price: "$129.99",
-        orig: "$169.99",
-        off: "Save 24%",
-        tag: "b-sale",
-        tagLabel: "24% off",
-        cat: "furniture"
-    },
-    {
-        icon: "🖊️",
-        bg: "#FEF3C7",
-        brand: "Zebra",
-        name: "Sarasa Clip Gel Pens — 10-pack",
-        stars: "★★★★★",
-        rating: "4.9 (1.2k)",
-        price: "$18.99",
-        orig: "",
-        off: "",
-        tag: "b-pick",
-        tagLabel: "Top rated",
-        cat: "pens"
-    },
-    {
-        icon: "🗂️",
-        bg: "#EDE9FE",
-        brand: "Veikous",
-        name: "Desktop file organizer — 5-section",
-        stars: "★★★★☆",
-        rating: "4.6 (543)",
-        price: "$34.99",
-        orig: "$44.99",
-        off: "Save 22%",
-        tag: "b-sale",
-        tagLabel: "22% off",
-        cat: "desk"
-    },
-    {
-        icon: "🖋️",
-        bg: "#DCFCE7",
-        brand: "Lamy",
-        name: "Safari Fountain Pen — extra fine",
-        stars: "★★★★★",
-        rating: "4.8 (567)",
-        price: "$29.99",
-        orig: "",
-        off: "",
+        rating: "4.8 (14.3k)",
+        price: "$149.99",
+        orig: "$199.99",
+        off: "Save 25%",
         tag: "b-pick",
         tagLabel: "Editor's pick",
-        cat: "pens"
+        cat: "tech"
     }
 ];
 const SORT_OPTIONS = [
@@ -237,13 +95,13 @@ function ProductCard({ p }) {
                         children: p.tagLabel
                     }, void 0, false, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 44,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ShopView.jsx",
-                lineNumber: 42,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,7 +112,7 @@ function ProductCard({ p }) {
                         children: p.brand
                     }, void 0, false, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 47,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -262,7 +120,7 @@ function ProductCard({ p }) {
                         children: p.name
                     }, void 0, false, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 48,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -274,13 +132,13 @@ function ProductCard({ p }) {
                                 children: p.rating
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 49,
+                                lineNumber: 35,
                                 columnNumber: 48
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 49,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -291,7 +149,7 @@ function ProductCard({ p }) {
                                 children: p.price
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 51,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this),
                             p.orig && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -299,7 +157,7 @@ function ProductCard({ p }) {
                                 children: p.orig
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 52,
+                                lineNumber: 38,
                                 columnNumber: 22
                             }, this),
                             p.off && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -307,19 +165,19 @@ function ProductCard({ p }) {
                                 children: p.off
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 53,
+                                lineNumber: 39,
                                 columnNumber: 22
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 50,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ShopView.jsx",
-                lineNumber: 46,
+                lineNumber: 32,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -329,18 +187,18 @@ function ProductCard({ p }) {
                     children: "↗ View deal on Amazon"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ShopView.jsx",
-                    lineNumber: 57,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/ShopView.jsx",
-                lineNumber: 56,
+                lineNumber: 42,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ShopView.jsx",
-        lineNumber: 41,
+        lineNumber: 27,
         columnNumber: 5
     }, this);
 }
@@ -370,7 +228,7 @@ function ShopView() {
                                 children: c.icon
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 84,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this),
                             " ",
@@ -378,12 +236,12 @@ function ShopView() {
                         ]
                     }, c.id, true, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 79,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/ShopView.jsx",
-                lineNumber: 77,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -397,7 +255,7 @@ function ShopView() {
                                 children: "Brand"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 92,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, this),
                             brands.map((b, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -411,14 +269,14 @@ function ShopView() {
                                                     className: `filt-check ${b.on ? "on" : ""}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ShopView.jsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 82,
                                                     columnNumber: 17
                                                 }, this),
                                                 b.name
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 95,
+                                            lineNumber: 81,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -426,13 +284,13 @@ function ShopView() {
                                             children: b.count
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 99,
+                                            lineNumber: 85,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, b.name, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 94,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -440,7 +298,7 @@ function ShopView() {
                                 children: "Price"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 103,
+                                lineNumber: 89,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -449,12 +307,12 @@ function ShopView() {
                                     className: "price-fill"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 104,
+                                    lineNumber: 90,
                                     columnNumber: 40
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 104,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -464,20 +322,20 @@ function ShopView() {
                                         children: "$0"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 105,
+                                        lineNumber: 91,
                                         columnNumber: 41
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Up to $200"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 105,
+                                        lineNumber: 91,
                                         columnNumber: 56
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 105,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -485,58 +343,24 @@ function ShopView() {
                                 children: "Rating"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 107,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "rating-row",
-                                children: [
-                                    "★★★★★ ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "5 stars only (142)"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 108,
-                                        columnNumber: 45
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 108,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "rating-row on",
                                 children: [
-                                    "★★★★☆ ",
+                                    "★★★★★ ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "4+ stars (280)"
+                                        children: "4.8 avg (14.3k)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 109,
+                                        lineNumber: 94,
                                         columnNumber: 48
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 109,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "rating-row",
-                                children: [
-                                    "★★★☆☆ ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "3+ stars (340)"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 110,
-                                        columnNumber: 45
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 110,
+                                lineNumber: 94,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -544,7 +368,7 @@ function ShopView() {
                                 children: "Availability"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 112,
+                                lineNumber: 96,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -556,19 +380,19 @@ function ShopView() {
                                             className: "filt-check on"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 113,
+                                            lineNumber: 97,
                                             columnNumber: 67
                                         }, this),
                                         " In stock"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 97,
                                     columnNumber: 40
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 113,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -580,19 +404,19 @@ function ShopView() {
                                             className: "filt-check"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 114,
+                                            lineNumber: 98,
                                             columnNumber: 64
                                         }, this),
                                         " On sale"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 98,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 114,
+                                lineNumber: 98,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -604,19 +428,19 @@ function ShopView() {
                                             className: "filt-check"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 99,
                                             columnNumber: 64
                                         }, this),
                                         " Prime eligible"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 99,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 115,
+                                lineNumber: 99,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -624,7 +448,7 @@ function ShopView() {
                                 children: "Source"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 117,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,19 +460,19 @@ function ShopView() {
                                             className: "filt-check on"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 118,
+                                            lineNumber: 102,
                                             columnNumber: 67
                                         }, this),
                                         " Amazon"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 118,
+                                    lineNumber: 102,
                                     columnNumber: 40
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 118,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -660,19 +484,19 @@ function ShopView() {
                                             className: "filt-check"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 119,
+                                            lineNumber: 103,
                                             columnNumber: 64
                                         }, this),
                                         " Staples"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 119,
+                                    lineNumber: 103,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 119,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -684,25 +508,25 @@ function ShopView() {
                                             className: "filt-check"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ShopView.jsx",
-                                            lineNumber: 120,
+                                            lineNumber: 104,
                                             columnNumber: 64
                                         }, this),
                                         " Office Depot"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ShopView.jsx",
-                                    lineNumber: 120,
+                                    lineNumber: 104,
                                     columnNumber: 37
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 120,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 91,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,14 +543,14 @@ function ShopView() {
                                                 children: filtered.length
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 126,
+                                                lineNumber: 110,
                                                 columnNumber: 53
                                             }, this),
                                             " products"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 126,
+                                        lineNumber: 110,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,7 +561,7 @@ function ShopView() {
                                                 children: "Sort by:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 128,
+                                                lineNumber: 112,
                                                 columnNumber: 15
                                             }, this),
                                             SORT_OPTIONS.map((s)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -746,19 +570,19 @@ function ShopView() {
                                                     children: s
                                                 }, s, false, {
                                                     fileName: "[project]/src/components/ShopView.jsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 114,
                                                     columnNumber: 17
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 127,
+                                        lineNumber: 111,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 125,
+                                lineNumber: 109,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -769,15 +593,15 @@ function ShopView() {
                                         children: "⭐ Editor's pick"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 142,
+                                        lineNumber: 126,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "feat-icon",
-                                        children: "🪑"
+                                        children: "⌨️"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 143,
+                                        lineNumber: 127,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -785,18 +609,18 @@ function ShopView() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "feat-name",
-                                                children: "FlexiChair Pro ergonomic mesh chair"
+                                                children: "Razer Huntsman Elite — Opto-Mechanical Gaming Keyboard"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 145,
+                                                lineNumber: 129,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "feat-desc",
-                                                children: "Lumbar support, adjustable armrests, breathable mesh back. Our top-rated chair after 6 months of real-desk testing."
+                                                children: "Linear optical switches, per-key RGB Chroma lighting, magnetic leatherette wrist rest, and a dedicated media dial. The keyboard that earns its place on any serious desk."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 146,
+                                                lineNumber: 130,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -807,20 +631,20 @@ function ShopView() {
                                                         children: "★★★★★"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ShopView.jsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 131,
                                                         columnNumber: 43
                                                     }, this),
-                                                    " 4.9 · 2,341 reviews · Verified purchase"
+                                                    " 4.8 · 14,300+ reviews · Verified purchase"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 147,
+                                                lineNumber: 131,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 144,
+                                        lineNumber: 128,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -828,26 +652,26 @@ function ShopView() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "feat-orig",
-                                                children: "Was $249.00"
+                                                children: "Was $199.99"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 150,
+                                                lineNumber: 134,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "feat-price",
-                                                children: "$189.99"
+                                                children: "$149.99"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 151,
+                                                lineNumber: 135,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "feat-save",
-                                                children: "You save $59.01 (24%)"
+                                                children: "You save $50.00 (25%)"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 152,
+                                                lineNumber: 136,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -855,19 +679,19 @@ function ShopView() {
                                                 children: "↗ View on Amazon"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ShopView.jsx",
-                                                lineNumber: 153,
+                                                lineNumber: 137,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 149,
+                                        lineNumber: 133,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 141,
+                                lineNumber: 125,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -876,30 +700,30 @@ function ShopView() {
                                         p: p
                                     }, i, false, {
                                         fileName: "[project]/src/components/ShopView.jsx",
-                                        lineNumber: 158,
+                                        lineNumber: 142,
                                         columnNumber: 37
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ShopView.jsx",
-                                lineNumber: 157,
+                                lineNumber: 141,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/ShopView.jsx",
-                        lineNumber: 124,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ShopView.jsx",
-                lineNumber: 89,
+                lineNumber: 75,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ShopView.jsx",
-        lineNumber: 75,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }

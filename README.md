@@ -14,7 +14,7 @@
 
 ## Specifications
 
-Office supply affiliate site built with React + Vite. Multi-view SPA with a deals ticker, product shop with sidebar filters, blog, and contact form. All styles are hand-written CSS — no UI framework.
+Office supply affiliate site built with Next.js 16 + React 19. App Router SPA with SSG on all pages, ISR on the shop, and SSG with `generateStaticParams` for blog posts. Deals ticker, sidebar-filtered shop, file-based markdown blog, and contact form. All styles are hand-written CSS — no UI framework.
 
 ***
 
@@ -22,13 +22,11 @@ Office supply affiliate site built with React + Vite. Multi-view SPA with a deal
 
 | Tool | Version | Purpose |
 | ---- | ------- | ------- |
-| Vite | ^8.1.0 | Dev server & bundler |
-| React | ^19.2.0 | UI components |
-| React DOM | ^19.2.0 | DOM rendering |
-| @vitejs/plugin-react | ^6.0.3 | JSX transform |
-| react-router-dom | latest | Client-side routing (BrowserRouter, NavLink) |
-| react-markdown | latest | Markdown rendering in blog posts |
-| remark-gfm | latest | GFM tables, strikethrough, task lists |
+| Next.js | ^16.2.9 | Framework — App Router, SSG, ISR, file routing |
+| React | ^19.2.7 | UI components |
+| React DOM | ^19.2.7 | DOM rendering |
+| react-markdown | ^10.1.0 | Markdown rendering in blog posts |
+| remark-gfm | ^4.0.1 | GFM tables, strikethrough, task lists |
 | Bootstrap Icons | 1.11.3 (CDN) | UI icons |
 | Inter | Google Fonts (CDN) | Typography |
 
@@ -37,9 +35,9 @@ Office supply affiliate site built with React + Vite. Multi-view SPA with a deal
 ## Scripts
 
 ```bash
-npm run dev       # start dev server (localhost:5173)
-npm run build     # production build → dist/
-npm run preview   # preview production build locally
+npm run dev     # start dev server (localhost:3000)
+npm run build   # production build → .next/
+npm run start   # serve production build locally
 ```
 
 ***
@@ -48,37 +46,47 @@ npm run preview   # preview production build locally
 
 ```bash
 office-affiliate/
-├── index.html
-├── vite.config.js
+├── next.config.mjs
+├── jsconfig.json
 ├── package.json
+├── .gitignore
+├── app/                          # Next.js App Router
+│   ├── layout.jsx                # root layout — Ticker, Navigation, footer, CDN links
+│   ├── page.jsx                  # / (SSG)
+│   ├── about/
+│   │   └── page.jsx              # /about (SSG)
+│   ├── shop/
+│   │   └── page.jsx              # /shop (ISR — revalidate: 3600)
+│   ├── blog/
+│   │   ├── page.jsx              # /blog (SSG)
+│   │   └── [slug]/
+│   │       └── page.jsx          # /blog/:slug (SSG — generateStaticParams)
+│   └── contact/
+│       └── page.jsx              # /contact (SSG)
 ├── styles/
-│   ├── default.css           # CSS variables, reset, base typography
-│   ├── app.css               # all component styles
-│   └── responsive.css        # breakpoints (1024 / 900 / 640px)
+│   ├── default.css               # CSS variables, reset, base typography
+│   ├── app.css                   # all component styles
+│   └── responsive.css            # breakpoints (1024 / 900 / 640px)
 ├── src/
-│   ├── main.jsx              # app entry — React root + BrowserRouter
-│   ├── posts/                # markdown blog posts (file-based)
+│   ├── posts/                    # markdown blog posts (file-based)
 │   │   ├── gel-pens-2026.md
 │   │   ├── standing-desk-review.md
 │   │   ├── leuchtturm-vs-moleskine.md
 │   │   ├── usb-c-hubs-2026.md
 │   │   ├── desk-setup-focus.md
 │   │   └── fountain-pens-beginners.md
-│   ├── api/
-│   │   └── api.js
 │   ├── utils/
-│   │   ├── formatters.js
 │   │   ├── parseFrontmatter.js   # YAML frontmatter parser (no dependencies)
-│   │   └── posts.js              # parses all .md files, exports POSTS + getPostBySlug
+│   │   └── posts.js              # fs-based post loader — getAllPosts, getPostBySlug
 │   └── components/
-│       ├── Ticker.jsx            # animated deals ticker bar
-│       ├── Navigation.jsx        # sticky header, logo, nav links, cart
-│       ├── HomeView.jsx          # hero, top picks, trust badges, categories, banner
-│       ├── AboutView.jsx         # about page with personal copy
-│       ├── ShopView.jsx          # category tabs, sidebar filters, product grid
-│       ├── BlogView.jsx          # post card grid + list/detail state
-│       ├── BlogPost.jsx          # full post reader (react-markdown)
-│       └── ContactView.jsx       # contact form with sent confirmation
+│       ├── Ticker.jsx            # server component — animated deals ticker
+│       ├── Navigation.jsx        # client component — next/link + usePathname
+│       ├── HomeView.jsx          # client component — useRouter for CTA navigation
+│       ├── AboutView.jsx         # server component — about page with personal copy
+│       ├── ShopView.jsx          # client component — category tabs, sidebar filters
+│       ├── BlogView.jsx          # server component — post card grid, next/link cards
+│       ├── BlogPost.jsx          # server component — full post reader (react-markdown)
+│       └── ContactView.jsx       # client component — contact form with sent state
 ├── img/
 │   └── mockup.png
 └── docs/
@@ -130,18 +138,18 @@ office-affiliate/
 
 ## Routing
 
-React Router v6 (`react-router-dom`) with `BrowserRouter`. Each view maps to a real URL path — back button, bookmarks, and direct links all work. `Navigation` uses `NavLink` with `end` on `/` to prevent the home link from staying active on every route.
+Next.js App Router file-based routing. No router library needed — each `app/**/page.jsx` maps directly to a URL.
 
-| Route | View |
-| ----- | ---- |
-| `/` | HomeView |
-| `/about` | AboutView |
-| `/shop` | ShopView |
-| `/blog` | BlogView |
-| `/blog/:slug` | BlogPost |
-| `/contact` | ContactView |
+| Route | Page file | Rendering |
+| ----- | --------- | --------- |
+| `/` | `app/page.jsx` | SSG |
+| `/about` | `app/about/page.jsx` | SSG |
+| `/shop` | `app/shop/page.jsx` | ISR (`revalidate: 3600`) |
+| `/blog` | `app/blog/page.jsx` | SSG |
+| `/blog/:slug` | `app/blog/[slug]/page.jsx` | SSG (`generateStaticParams`) |
+| `/contact` | `app/contact/page.jsx` | SSG |
 
-`HomeView` uses `useNavigate` for CTA buttons. `Navigation` handles scrolling to top on each link click. Post data is centralised in `src/utils/posts.js` — `POSTS` array and `getPostBySlug(slug)` are shared between `BlogView` and `BlogPost`.
+`Navigation` uses `usePathname` from `next/navigation` for the active link. `HomeView` uses `useRouter` for button-driven navigation. `BlogPost` pages get per-post metadata via `generateMetadata`. Unknown slugs return a 404 via `notFound()`.
 
 ***
 
