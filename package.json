@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:clean": "rm -rf .next && next build",
+    "build": "rm -rf .next && next build",
     "start": "next start"
   },
   "devDependencies": {
