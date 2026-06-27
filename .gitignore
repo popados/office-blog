@@ -1,7 +1,8 @@
 # dependencies
 node_modules/
 
-# build output
+# Next.js build output
+.next/
 
 # vite cache
 .vite/
@@ -27,6 +28,3 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-*.sst
