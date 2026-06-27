@@ -3,13 +3,9 @@
 import { useState } from "react";
 
 const CAT_TABS = [
-  { id: "all",        icon: "⊞",  label: "All products" },
-  { id: "pens",       icon: "✏️", label: "Writing tools" },
-  { id: "furniture",  icon: "🪑", label: "Ergonomics" },
-  { id: "tech",       icon: "⌨️", label: "Tech accessories" },
-  { id: "essentials", icon: "🖨️", label: "Essentials" },
-  { id: "desk",       icon: "📁", label: "Filing & Desk" },
-  { id: "notebooks",  icon: "📓", label: "Notebooks" },
+  { id: "all",  icon: "⊞",  label: "All products" },
+  { id: "pens", icon: "✏️", label: "Writing tools" },
+  { id: "tech", icon: "⌨️", label: "Tech accessories" },
 ];
 
 const SORT_OPTIONS = ["Top rated", "Price: low", "Price: high", "Newest", "Best discount"];
@@ -80,20 +76,18 @@ export default function ShopView({ products, initialBrands, featured }) {
 
           <div className="filt-section-head">Price</div>
           <div className="price-track"><div className="price-fill"></div></div>
-          <div className="price-labels"><span>$0</span><span>Up to $200</span></div>
+          <div className="price-labels"><span>$14</span><span>Up to $200</span></div>
 
           <div className="filt-section-head">Rating</div>
-          <div className="rating-row on">★★★★★ <span>4.8 avg (14.3k)</span></div>
+          <div className="rating-row on">★★★★★ <span>4.8 avg · 23k+ reviews</span></div>
 
           <div className="filt-section-head">Availability</div>
           <div className="filt-row on"><div className="filt-left"><div className="filt-check on"></div> In stock</div></div>
-          <div className="filt-row"><div className="filt-left"><div className="filt-check"></div> On sale</div></div>
-          <div className="filt-row"><div className="filt-left"><div className="filt-check"></div> Prime eligible</div></div>
+          <div className="filt-row on"><div className="filt-left"><div className="filt-check on"></div> On sale</div></div>
+          <div className="filt-row on"><div className="filt-left"><div className="filt-check on"></div> Prime eligible</div></div>
 
           <div className="filt-section-head">Source</div>
           <div className="filt-row on"><div className="filt-left"><div className="filt-check on"></div> Amazon</div></div>
-          <div className="filt-row"><div className="filt-left"><div className="filt-check"></div> Staples</div></div>
-          <div className="filt-row"><div className="filt-left"><div className="filt-check"></div> Office Depot</div></div>
         </aside>
 
         <div className="shop-content">

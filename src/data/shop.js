@@ -1,5 +1,19 @@
 export const PRODUCTS = [
   {
+    icon: "✒️",
+    bg: "#E0F2F0",
+    brand: "Pilot",
+    name: "G2 Fine Ballpoint Pens — 12-Pack",
+    stars: "★★★★★",
+    rating: "4.8 (9.2k)",
+    price: "$14.49",
+    orig: "$18.00",
+    off: "Save 19%",
+    tag: "b-sale",
+    tagLabel: "19% off",
+    cat: "pens",
+  },
+  {
     icon: "⌨️",
     bg: "#1a1a2e",
     brand: "Razer",
@@ -16,6 +30,7 @@ export const PRODUCTS = [
 ];
 
 export const BRANDS = [
+  { name: "Pilot", count: 1, on: true },
   { name: "Razer", count: 1, on: true },
 ];
 
