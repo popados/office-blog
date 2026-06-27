@@ -12,14 +12,6 @@ const CAT_TABS = [
   { id: "notebooks",  icon: "📓", label: "Notebooks" },
 ];
 
-const INITIAL_BRANDS = [
-  { name: "Razer", count: 1, on: true },
-];
-
-const PRODUCTS = [
-  { icon: "⌨️", bg: "#1a1a2e", brand: "Razer", name: "Huntsman Elite — Opto-Mechanical Gaming Keyboard", stars: "★★★★★", rating: "4.8 (14.3k)", price: "$149.99", orig: "$199.99", off: "Save 25%", tag: "b-pick", tagLabel: "Editor's pick", cat: "tech" },
-];
-
 const SORT_OPTIONS = ["Top rated", "Price: low", "Price: high", "Newest", "Best discount"];
 
 function ProductCard({ p }) {
@@ -46,12 +38,14 @@ function ProductCard({ p }) {
   );
 }
 
-export default function ShopView() {
+export default function ShopView({ products, initialBrands, featured }) {
   const [activeCat, setActiveCat]   = useState("all");
   const [activeSort, setActiveSort] = useState("Top rated");
-  const [brands, setBrands]         = useState(INITIAL_BRANDS);
+  const [brands, setBrands]         = useState(initialBrands);
 
-  const filtered = activeCat === "all" ? PRODUCTS : PRODUCTS.filter(p => p.cat === activeCat);
+  const filtered = activeCat === "all"
+    ? products
+    : products.filter(p => p.cat === activeCat);
 
   function toggleBrand(i) {
     setBrands(prev => prev.map((b, idx) => idx === i ? { ...b, on: !b.on } : b));
@@ -59,7 +53,6 @@ export default function ShopView() {
 
   return (
     <div className="shop-view">
-      {/* ── Category tabs ── */}
       <div className="cats-bar">
         {CAT_TABS.map(c => (
           <button
@@ -73,7 +66,6 @@ export default function ShopView() {
       </div>
 
       <div className="shop-body">
-        {/* ── Sidebar ── */}
         <aside className="shop-sidebar">
           <div className="filt-section-head">Brand</div>
           {brands.map((b, i) => (
@@ -104,7 +96,6 @@ export default function ShopView() {
           <div className="filt-row"><div className="filt-left"><div className="filt-check"></div> Office Depot</div></div>
         </aside>
 
-        {/* ── Content ── */}
         <div className="shop-content">
           <div className="content-bar">
             <span className="results-label">Showing <strong>{filtered.length}</strong> products</span>
@@ -124,16 +115,16 @@ export default function ShopView() {
 
           <div className="featured-strip">
             <span className="feat-badge">⭐ Editor's pick</span>
-            <div className="feat-icon">⌨️</div>
+            <div className="feat-icon">{featured.icon}</div>
             <div className="feat-info">
-              <div className="feat-name">Razer Huntsman Elite — Opto-Mechanical Gaming Keyboard</div>
-              <div className="feat-desc">Linear optical switches, per-key RGB Chroma lighting, magnetic leatherette wrist rest, and a dedicated media dial. The keyboard that earns its place on any serious desk.</div>
-              <div className="feat-stars"><span className="s">★★★★★</span> 4.8 · 14,300+ reviews · Verified purchase</div>
+              <div className="feat-name">{featured.name}</div>
+              <div className="feat-desc">{featured.desc}</div>
+              <div className="feat-stars"><span className="s">★★★★★</span> {featured.stars}</div>
             </div>
             <div className="feat-right">
-              <div className="feat-orig">Was $199.99</div>
-              <div className="feat-price">$149.99</div>
-              <div className="feat-save">You save $50.00 (25%)</div>
+              <div className="feat-orig">Was {featured.orig}</div>
+              <div className="feat-price">{featured.price}</div>
+              <div className="feat-save">{featured.saving}</div>
               <button className="feat-cta">↗ View on Amazon</button>
             </div>
           </div>
